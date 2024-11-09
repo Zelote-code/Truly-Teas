@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tea - TeaTime</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #8bc34a;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item img {
+            max-width: 100px;
+            border-radius: 8px;
+        }
+        .item-details {
+            flex-grow: 1;
+            margin-left: 15px;
+        }
+        .item-details h3 {
+            margin: 0;
+            color: #333;
+        }
+        .item-details p {
+            margin: 5px 0;
+            color: #777;
+        }
+        .customization {
+            margin-top: 10px;
+        }
+        .customization label {
+            margin-right: 10px;
+        }
+        .cart {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .cart-summary {
+            color: #333;
+            font-size: 18px;
+        }
+        .btn {
+            background-color: #8bc34a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #7cb342;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TeaTime - Order Your Favorite Tea</h1>
+    </header>
+
+    <div class="container">
+        <!-- Tea Menu Section -->
+        <div class="menu-item">
+            <img src="https://via.placeholder.com/100" alt="Green Tea">
+            <div class="item-details">
+                <h3>Green Tea</h3>
+                <p>Refreshing and healthy. Perfect for relaxation.</p>
+                <div class="customization">
+                    <label for="green-tea-size">Size:</label>
+                    <select id="green-tea-size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                    <label for="green-tea-sweetness">Sweetness:</label>
+                    <select id="green-tea-sweetness">
+                        <option value="none">No Sweetener</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Tea Menu Section -->
+        <div class="menu-item">
+            <img src="https://via.placeholder.com/100" alt="Black Tea">
+            <div class="item-details">
+                <h3>Black Tea</h3>
+                <p>Classic and bold with a strong flavor.</p>
+                <div class="customization">
+                    <label for="black-tea-size">Size:</label>
+                    <select id="black-tea-size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                    <label for="black-tea-sweetness">Sweetness:</label>
+                    <select id="black-tea-sweetness">
+                        <option value="none">No Sweetener</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Cart Summary Section -->
+        <div class="cart">
+            <div class="cart-summary">
+                <p>Total Items: 2</p>
+                <p>Total Price: $12.99</p>
+            </div>
+            <button class="btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 TeaTime - All Rights Reserved</p>
+    </footer>
+</body>
+</html>
