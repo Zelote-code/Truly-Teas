@@ -32,11 +32,11 @@ html ::-webkit-scrollbar{
   margin-right: 40px;
 }
 .navbar-nav{
-  margin-left: 50px;
+  margin-left: 200px;
 }
 .nav-item .nav-link{
   color: black;
-  margin-left: 10px;
+  margin-left: 40px;
   font-weight: bold;
   transition: 0.5s;
 }
@@ -52,10 +52,74 @@ html ::-webkit-scrollbar{
 }
 
 
+/* Container link styling */
+.video-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
 /* home section start */
+/* Container link styling */
+.video-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Video styling */
+.styled-video {
+  width: 70%;
+  max-width: 500px; /* Keeps it responsive */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Hover effect on the video link */
+.video-link:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Additional styling for video controls and play button */
+.styled-video::-webkit-media-controls {
+  opacity: 0.9; /* Light opacity for a subtle look */
+}
+
+.styled-video:hover::-webkit-media-controls {
+  opacity: 1; /* Full opacity on hover */
+}
+
+/* For medium screens (tablets, etc.) */
+@media screen and (max-width: 982px) {
+  .styled-video {
+    max-width: 50%; /* Increase video width for medium-sized screens */
+  }
+}
+
+/* For small screens (phones in portrait mode) */
+@media screen and (max-width: 766px) {
+  .styled-video {
+    max-width: 50%; /* Make video width even larger for small screens */
+  }
+}
+
+/* For extra small screens (phones in landscape or very small screens) */
+@media screen and (max-width: 480px) {
+  .styled-video {
+    max-width: 50%; /* Full width for mobile screens */
+  }
+}
+
+
 #home{
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(images/bg2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -97,7 +161,7 @@ html ::-webkit-scrollbar{
 /* about section start */
 #about{
   width: 100%;
-  height: 100vh;
+  height: 120vh;
 
 }
 #about .container{
@@ -133,9 +197,54 @@ html ::-webkit-scrollbar{
   background-color: #b2744c;
   color: white;
 }
+/* Mission and Vision Section Styling */
+.mission, .vision {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #f7f7f7; /* Light background color */
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mission h3, .vision h3 {
+  font-size: 1.8rem;
+  color: #333; /* Dark text color */
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e1e1e1; /* Underline for title */
+  padding-bottom: 5px;
+}
+
+.mission p, .vision p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.mission:hover, .vision:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
 @media screen and (max-width:982px){
   #about p{
     font-size: 8px;
+  }
+
+  .mission, .vision {
+    padding: 15px;
+  }
+
+  .mission h3, .vision h3 {
+    font-size: 8px; /* Smaller heading on medium screens */
+  }
+
+  .mission p, .vision p {
+    font-size: 8px; /* Slightly smaller text for readability */
+  }
+
+  /* Stack the Mission and Vision sections on medium screens */
+  .mission, .vision {
+    margin-top: 20px;
   }
   
 }
@@ -144,7 +253,45 @@ html ::-webkit-scrollbar{
     font-size: 15px;
   }
   #about{
-    height: 120vh;
+    height: auto;
+  }
+  .mission, .vision {
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .mission h3, .vision h3 {
+    font-size: 1.3rem; /* Smaller heading */
+  }
+
+  .mission p, .vision p {
+    font-size: 0.9rem; /* Smaller text for better readability */
+  }
+
+  /* Stack the Mission and Vision side by side on small screens */
+  .mission, .vision {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .mission, .vision {
+    width: 100%; /* Full-width cards on smaller screens */
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  /* Further adjust the layout for extra small screens */
+  .mission h3, .vision h3 {
+    font-size: 1.2rem; /* Even smaller headings */
+  }
+
+  .mission p, .vision p {
+    font-size: 0.85rem; /* Smaller text for small devices */
+  }
+
+  .mission, .vision {
+    padding: 8px;
   }
 }
 
@@ -186,6 +333,7 @@ html ::-webkit-scrollbar{
 #menu{
   width: 100%;
   margin-top: 60px;
+  padding-top: 80px;
 }
 .heading3{
   text-align: center;
@@ -258,6 +406,7 @@ font-size: 23px;
 /* our gallary start */
 #gallary{
   width: 100%;
+  padding-top: 50px;
 }
 .heading5{
   text-align: center;
@@ -326,21 +475,13 @@ font-size: 23px;
 #col{
   width: 40%;
   height: 56vh;
-  background: black;
   margin-top: 70px;
 }
-#contact h1{
-  color: white;
-  font-size: 25px;
-  margin-top: 10px;
-  margin-left: 10px;
+#col img{
+  width: 70%;
+  border-radius: 10px;
 }
-#contact #col p{
-  font-size: 15px;
-  color: white;
-  margin-left: 13px;
-  margin-top: 30px;
-}
+
 
 @media screen and (max-width:766px){
   #contact .container{
@@ -369,6 +510,7 @@ font-size: 23px;
 /* blog start */
 #blogs{
   width: 100%;
+  padding-top: 70px;
 }
 #blogs .heading7{
   text-align: center;
@@ -380,7 +522,7 @@ font-size: 23px;
   color: #b2744c;
 }
 #blogs .container{
-  margin-top: 60px;
+  margin-top: 40px;
 }
 #blogs .card{
   padding-bottom: 20px;
