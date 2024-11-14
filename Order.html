@@ -1,162 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Tea - TeaTime</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #8bc34a;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            background-color: #fff;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .menu-item img {
-            max-width: 100px;
-            border-radius: 8px;
-        }
-        .item-details {
-            flex-grow: 1;
-            margin-left: 15px;
-        }
-        .item-details h3 {
-            margin: 0;
-            color: #333;
-        }
-        .item-details p {
-            margin: 5px 0;
-            color: #777;
-        }
-        .customization {
-            margin-top: 10px;
-        }
-        .customization label {
-            margin-right: 10px;
-        }
-        .cart {
-            margin-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .cart-summary {
-            color: #333;
-            font-size: 18px;
-        }
-        .btn {
-            background-color: #8bc34a;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .btn:hover {
-            background-color: #7cb342;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truly Teas</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" class="rounded-circle" href="images/favicon.ico" type="image/x-icon" >
+  <!-- boots strap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <!-- this is icon links -->
+   <!-- javascript link -->
+    <script defer src="javascript.js"></script>
 </head>
 <body>
-    <header>
-        <h1>TeaTime - Order Your Favorite Tea</h1>
-    </header>
-
-    <div class="container">
-        <!-- Tea Menu Section -->
-        <div class="menu-item">
-            <img src="https://via.placeholder.com/100" alt="Green Tea">
-            <div class="item-details">
-                <h3>Green Tea</h3>
-                <p>Refreshing and healthy. Perfect for relaxation.</p>
-                <div class="customization">
-                    <label for="green-tea-size">Size:</label>
-                    <select id="green-tea-size">
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
-                    </select>
-                    <label for="green-tea-sweetness">Sweetness:</label>
-                    <select id="green-tea-sweetness">
-                        <option value="none">No Sweetener</option>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
-                </div>
-                <button class="btn">Add to Cart</button>
-            </div>
-        </div>
-
-        <!-- Tea Menu Section -->
-        <div class="menu-item">
-            <img src="https://via.placeholder.com/100" alt="Black Tea">
-            <div class="item-details">
-                <h3>Black Tea</h3>
-                <p>Classic and bold with a strong flavor.</p>
-                <div class="customization">
-                    <label for="black-tea-size">Size:</label>
-                    <select id="black-tea-size">
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
-                    </select>
-                    <label for="black-tea-sweetness">Sweetness:</label>
-                    <select id="black-tea-sweetness">
-                        <option value="none">No Sweetener</option>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
-                </div>
-                <button class="btn">Add to Cart</button>
-            </div>
-        </div>
-
-        <!-- Cart Summary Section -->
-        <div class="cart">
-            <div class="cart-summary">
-                <p>Total Items: 2</p>
-                <p>Total Price: $12.99</p>
-            </div>
-            <button class="btn">Proceed to Checkout</button>
-        </div>
+  <div class="all-content">
+    <!-- navbar start -->
+     
+    
+    <nav class="navbar navbar-expand-lg"  id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" id="logo"><img src="images/logo2.jpg" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fa-solid fa-bars" style="color: white; font-size: 23px;"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#menu">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#product">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallary">Gallary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#blogs">Blog</a>
+        </li>
+      </ul>
     </div>
+  </div>
+</nav>
+     <!-- nav bar end  -->
 
-    <footer>
-        <p>&copy; 2024 TeaTime - All Rights Reserved</p>
-    </footer>
+
+
+
+
+
+
+     <!-- home section start -->
+     <section id="home">
+      <div class="content">
+        <h3>Start Your Day With a <br> Fresh Tea</h3>
+        <p>Welcome to Truly Teas, Your destination for exceptional teas that turn every sip into a soothing experience.
+          <br>From rich, bold black teas to delicate green teas and aromatic herbal blends.
+        </p>
+        <a class="video-link" target="_blank" href="https://youtu.be/EsOLVkFKbuM?si=Vl3990Rf3UXxE1ba">
+          <video class="styled-video" width="500px" controls autoplay muted loop>
+            <source src="images/adds.mp4" type="video/mp4">
+            <source src="" type="">
+          </video>
+      </a>
+      </div>
+     </section>
+
+
+
+
+
+     <!-- about section start -->
+      <section id="about">
+        <div class="container">
+          <div class="heading">About <span>Us</span></div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <img src="images/R.jpg" alt="">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h3>What Makes Our tea Special?</h3>
+              <p>Our tea stands out for its carefully selected, sustainably sourced ingredients, brewed with a commitment to quality and wellness.
+                <br><br>Each blend captures unique, rich flavors that not only delight the senses but also provide natural health benefits.
+                <br><br>With a commitment to sustainability, every cup represents our passion for quality and our dedication to offering a mindful.
+              </p>
+              <button id="about-btn">Learn More</button>
+            </div>
+            <div class="col-md-6">
+              <div class="mission">
+                <h3>Our Mission</h3>
+                <p>So our MISSION is To make sure service is all equal and provide a better sell, quality amd performance for costumer's want also the taste of a tea in a good Herbalife.</p>
+              </div> 
+          </div>
+          <div class="col-md-6">
+            <div class="vision">
+              <h3>Our Vision</h3>
+              <p>The last our VISION is aiming goods or to give our clients the greatest possible tea experience. Truly Teas aims to carry on the tradition of offering wholesome drink options and integrating the consumption of fine teas into everyday life. One cup at a time or everyday, we hope to transform people's perceptions and ideas about tea.</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+
+
+
+
+
+
+      <!-- top card start -->
+       <section id="top-cards">
+        <div class="heading2">Top <span>Categories</span>
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                  <img src="images/Black.jpg" alt="">
+                </div>
+              </div>
+
+              <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                  <img src="images/green.jpg" alt="">
+                </div>
+              </div>
+
+              <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                  <img src="images/herbal.jpg" alt="">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+       </section>
+
+
+
+
+
+         
+    <!-- menu card start -->
+       <section id="menu">
+        <div class="container">
+          <div class="heading3">Menu</div>
+        </div>
+
+        <div class="container" id="container2">
+
+          <div class="row">
+
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img src="Black tea/b1.jpg" alt="">
+
+                <div class="card-body">
+                  <div class="star text-center">
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+
+                  <h3>Assam</h3>
+                  <p>$80 <strike>$95</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+
+                </div>
+                
+
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img src="Black tea/b2.jpg" alt="">
+
+                <div class="card-body">
+                  <div class="star text-center">
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+
+                  <h3>Ceylon</h3>
+                  <p>$90 <strike>$105</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+
+                </div>
+                
+
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img src="Black tea/lapsang b3.jpg" alt="">
+
+                <div class="card-body">
+                  <div class="star text-center">
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+
+                  <h3>Lapsang</h3>
+                  <p>$75 <strike>$85</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+
+                </div>
+                
+
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img src="Black tea/masala-chai b4.jpg" alt="">
+
+                <div class="card-body">
+                  <div class="star text-center">
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+
+                  <h3>Masala-chai </h3>
+                  <p>$95 <strike>$110</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+
+                </div>
+                
+
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+          <div class="row" style="margin-top: 30px;">
+
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img src="Green tea/hojicha g1.jpg" alt="">
+
+                <div class="card-body">
+                  <div class="star text-center">
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+
+                  <h3>Hojicha</h3>
+                  <p>$60 <strike>$70</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+
+                </div>
+                
+
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img src="Green tea/genmaicha g2.jpg" alt="">
+
+                <div class="card-body">
+                  <div class="star text-center">
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+
+                  <h3>Genmaicha</h3>
+                  <p>65 <strike>$75</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+
+                </div>
+                
+
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img src="Green tea/longjing g3.jpg" alt="">
+
+                <div class="card-body">
+                  <div class="star text-center">
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+
+                  <h3>Longjing</h3>
+                  <p>$80 <strike>$90</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+
+                </div>
+                
+
+              </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img src="Green tea/kukicha g4.jpg" alt="">
+
+                <div class="card-body">
+                  <div class="star text-center">
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+
+                  <h3>Kukicha</h3>
+                  <p>$55 <strike>$65</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+
+                </div>
+                
+
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+       </section>
+
+
+
+
+       <!-- product section start -->
+        <section id="product">
+          <div class="container">
+            <div class="heading4">Product</div>
+          </div>
+
+          <div class="cotainer" id="container3">
+            <div class="row">
+              <div class="col-md-3 py-3 py3">
+                <div class="card">
+                  <img src="product/black1.webp" alt="">
+                  <div class="card-body">
+                    <h3>Black Tea</h3>
+                    <p>$120 <strike>$150</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 py-3 py3">
+                <div class="card">
+                  <img src="product/black2.jpg" alt="">
+                  <div class="card-body">
+                    <h3>Black Tea</h3>
+                    <p>$120 <strike>$150</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 py-3 py3">
+                <div class="card">
+                  <img src="product/black3.jpg" alt="">
+                  <div class="card-body">
+                    <h3>Black Tea</h3>
+                    <p>$120 <strike>$150</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 py-3 py3">
+                <div class="card">
+                  <img src="product/black4.webp" alt="">
+                  <div class="card-body">
+                    <h3>Black Tea</h3>
+                    <p>$120 <strike>$150</strike> <span class="fa-solid fa-cart-shopping"></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+
+
+
+        <!-- our gallarey start -->
+          <div class="container" id="gallary">
+            <div class="heading5">Our <span>Gallary</span></div>
+
+            <div class="row" style="margin-top: 30px;">
+
+              <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                  <img src="Gallary/g1.avif" alt="">
+                </div>
+              </div>
+              <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                  <img src="Gallary/g2.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                  <img src="Gallary/g5.avif" alt="">
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="row" style="margin-top: 30px;">
+
+              <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                  <img src="Gallary/g6.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                  <img src="Gallary/g7.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                  <img src="Gallary/g8.avif" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+
+
+          <!-- contact start -->
+           <section id="contact">
+            <div class="container">
+              <div class="row">
+
+                <div class="col-md-7">
+                  <div class="heading6">Contact <span>Us</span></div>
+                  <p>Whether you have questions about our products, need assistance, or just want to connect.
+                    <br>We’re here to listen and provide support.
+                    
+                  </p>
+                  <input type="text" class="form-control" placeholder="Name" aria-label="deafult input example">
+                  <br>
+                  <input type="email" class="form-control" placeholder="Email" aria-label="deafult input example">
+                  <br>
+                  <input type="number" class="form-control" placeholder="Phone Number" aria-label="deafult input example">
+                  <br>
+                  <button id="contact-btn">send Message</button>
+                </div>
+
+                <div class="col-md-5" id="col">
+                  <img src="images/poster2.jpg" alt="">
+                </div>
+
+              </div>
+            </div>
+           </section>
+
+
+           <!-- blog start -->
+            <section id="blogs">
+              <div class="heading7">Lates <span>Blog</span></div>
+                <div class="container">
+
+                  <div class="row">
+
+                    <div class="col-md-4 py-3 py-md-0">
+
+                      <div class="card">
+                        <img src="blog/bl1.jpg" alt="">
+                        <h3> A Love Letter to Tea.</h3>
+                        <h5>Truly Teas / Feburary 7 2022</h5>
+                        <p>Ah, tea. The warm, comforting beverage that has been enjoyed for centuries across the globe. 
+                          <br>It's more than just a drink; it's a ritual, a moment of peace, a source of warmth and flavor.</p>
+                        <div class="button-container">
+                          <button id="blog-btn">Read More</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 py-3 py-md-0">
+
+                      <div class="card">
+                        <img src="blog/bl2.jpg" alt="">
+                        <h3>Tea and Nature's Embrace.</h3>
+                        <h5>Truly Teas / May 15 2023</h5>
+                        <p>Today, we delve into the harmonious connection between tea and nature. 
+                          <br>From the verdant tea gardens to the delicate flavors inspired by the natural world.</p>
+                        <div class="button-container">
+                          <button id="blog-btn">Read More</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 py-3 py-md-0">
+
+                      <div class="card">
+                        <img src="blog/bl3.jpg" alt="">
+                        <h3>Unleash Your Inner Explorer.</h3>
+                        <h5>TrulyTeas / January 7 2024</h5>
+                        <p>Forget the ordinary, forget the routine. Today, we're talking about tea as a catalyst for excitement.
+                          a beverage that ignites your adventurous spirit.
+                        </p>
+                        <div class="button-container">
+                          <button id="blog-btn">Read More</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  
+                  
+
+                </div>
+            </section>
+
+
+          <!-- footer start -->
+           <footer id="footer">
+            <div class="copyright text-center">
+              &copy; Copyrigth <strong> <span>Truly Teas</span></strong>.All Rigths reserved
+            </div>
+
+            <a href="#" class="arrow"><img src="up-arrow.png" alt=""></a>
+
+           </footer>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
