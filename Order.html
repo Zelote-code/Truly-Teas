@@ -3,160 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Tea - TeaTime</title>
+    <title>Order Tea - TrulyTeas</title>
+    <script defer src="javascript.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #8bc34a;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            background-color: #fff;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .menu-item img {
-            max-width: 100px;
-            border-radius: 8px;
-        }
-        .item-details {
-            flex-grow: 1;
-            margin-left: 15px;
-        }
-        .item-details h3 {
-            margin: 0;
-            color: #333;
-        }
-        .item-details p {
-            margin: 5px 0;
-            color: #777;
-        }
-        .customization {
-            margin-top: 10px;
-        }
-        .customization label {
-            margin-right: 10px;
-        }
-        .cart {
-            margin-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .cart-summary {
-            color: #333;
-            font-size: 18px;
-        }
-        .btn {
-            background-color: #8bc34a;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .btn:hover {
-            background-color: #7cb342;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+       body {
+    font-family: 'Georgia', serif;
+    background-color: #f0efe8; /* Soft, natural background */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #679436; /* Earthy green */
+    color: #f5f0e3; /* Light cream text */
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 3px solid #4a6a2d;
+}
+
+.item-details h3 {
+    margin: 0;
+    color: #333;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.item-details p {
+    margin: 8px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.customization {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30px;
+    max-width: 50px;
+    margin-top: 15px;
+}
+
+.customization label {
+    margin-right: 5px;
+    font-weight: bold;
+    color: #4a6a2d;
+}
+
+.customization select {
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f0f0e8;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.customization select:hover {
+    border-color: #679436;
+}
+
+.cart {
+    max-width: 600px; /* Medium width */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.cart-summary p {
+    margin: 5px 0;
+}
+
+.btn {
+    background-color: #679436;
+    color: #f5f0e3;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #56732a; /* Darker green for hover */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.menu-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between items */
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.333% - 20px); /* Three columns with gap adjustment */
+    box-sizing: border-box;
+}
+
+.menu-item img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.item-details {
+    text-align: center;
+}
+.btn {
+    margin-top: 15px;
+    background-color: #679436;
+    color: #f5f0e3;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #56732a; /* Darker green on hover */
+}
+
+
+@media (max-width: 982px) {
+    .menu-item {
+        width: calc(50% - 20px); /* Two columns for tablet screens */
+    }
+    .customization {
+    margin-top: 10px;
+    max-width: 18px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .menu-item {
+        width: calc(50% - 20px); /* Two columns for tablet screens */
+    }
+    .customization {
+    margin-top: 10px;
+    max-width: 12px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .menu-item {
+        width: 100%; /* Full width for small screens */
+    }
+    .customization {
+    margin-top: 10px;
+    max-width: 10px;
+    }
+
+}
+
+
     </style>
 </head>
 <body>
     <header>
-        <h1>TeaTime - Order Your Favorite Tea</h1>
+        <h1>TrulyTeas - Order Your Favorite Tea</h1>
     </header>
 
     <div class="container">
         <!-- Tea Menu Section -->
-        <div class="menu-item">
-            <img src="https://via.placeholder.com/100" alt="Green Tea">
-            <div class="item-details">
-                <h3>Green Tea</h3>
-                <p>Refreshing and healthy. Perfect for relaxation.</p>
-                <div class="customization">
-                    <label for="green-tea-size">Size:</label>
-                    <select id="green-tea-size">
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
-                    </select>
-                    <label for="green-tea-sweetness">Sweetness:</label>
-                    <select id="green-tea-sweetness">
-                        <option value="none">No Sweetener</option>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
+        <div class="menu-row">
+            <div class="menu-item">
+                <img src="images/green.jpg" alt="Green Tea">
+                <div class="item-details">
+                    <h3>Green Tea</h3>
+                    <p>Refreshing and healthy. Perfect for relaxation.</p>
+                    <div class="customization">
+                        <label for="green-tea-size">Size:</label>
+                        <select id="green-tea-size" class="size-selector">
+                            <option value="small" data-price="10">Small</option>
+                            <option value="medium" data-price="20">Medium</option>
+                            <option value="large" data-price="50">Large</option>
+                        </select>
+                        <label for="green-tea-leaf">Leaf:</label>
+                        <select id="green-tea-leaf" class="leaf-selector">
+                            <option value="hojicha" data-price="50">Hojicha</option>
+                            <option value="genmaicha" data-price="60">Genmaicha</option>
+                            <option value="longjing" data-price="70">Longjing</option>
+                            <option value="kukicha" data-price="80">Kukicha</option>
+                        </select>
+                    </div>
+                    <p>Total Price: $<span class="total-price"></span></p>
+                    <button class="btn add-to-cart">Add to Cart</button>
                 </div>
-                <button class="btn">Add to Cart</button>
+            </div>
+    
+            <div class="menu-item">
+                <img src="images/Black.jpg" alt="Black Tea">
+                <div class="item-details">
+                    <h3>Black Tea</h3>
+                    <p>Classic and bold with a strong flavor.</p>
+                    <div class="customization">
+                        <label for="black-tea-size">Size:</label>
+                        <select id="black-tea-size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                        <label for="black-tea-flavor">Flavor:</label>
+                        <select id="black-tea-flavor">
+                            <option value="assam">Assam</option>
+                            <option value="ceylon">Ceylon</option>
+                            <option value="lapsang">Lapsang</option>
+                            <option value="masala-chai">Masala-chai</option>
+                        </select>
+                    </div>
+                    <button class="btn  add-to-cart" data-price="5.99">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="images/herbal.jpg" alt="Herbal Tea">
+                <div class="item-details">
+                    <h3>Herbal Tea</h3>
+                    <p>Wide range of flavors and potential health benefits.</p>
+                    <div class="customization">
+                        <label for="herbal-tea-size">Size:</label> 
+                        <select id="herbal-tea-size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                        <label for="herbal-tea-flavor">Flavor:</label>
+                        <select id="herbal-tea-flavor">
+                            <option value="chamomile">Chamomile</option>
+                            <option value="peppermint">Peppermint</option>
+                            <option value="ginger">Ginger</option>
+                            <option value="hibiscus">Hibiscus</option>
+                        </select>
+                    </div>
+                    <button class="btn add-to-cart" data-price="4.99" >Add to Cart</button>
+                </div>
             </div>
         </div>
-
-        <!-- Tea Menu Section -->
-        <div class="menu-item">
-            <img src="https://via.placeholder.com/100" alt="Black Tea">
-            <div class="item-details">
-                <h3>Black Tea</h3>
-                <p>Classic and bold with a strong flavor.</p>
-                <div class="customization">
-                    <label for="black-tea-size">Size:</label>
-                    <select id="black-tea-size">
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
-                    </select>
-                    <label for="black-tea-sweetness">Sweetness:</label>
-                    <select id="black-tea-sweetness">
-                        <option value="none">No Sweetener</option>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
-                </div>
-                <button class="btn">Add to Cart</button>
-            </div>
-        </div>
+    </div>
+    
 
         <!-- Cart Summary Section -->
         <div class="cart">
             <div class="cart-summary">
-                <p>Total Items: 2</p>
-                <p>Total Price: $12.99</p>
+                <p id="total-items">Total Items: 0</p>
+                <p id="total-price">Total Price: $0.00</p>
             </div>
-            <button class="btn">Proceed to Checkout</button>
+            <button id="checkout-btn" class="btn">Proceed to Checkout</button>
         </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 TeaTime - All Rights Reserved</p>
-    </footer>
 </body>
 </html>
