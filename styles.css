@@ -50,16 +50,6 @@ html ::-webkit-scrollbar{
   color: white;
   border: 1px solid white;
 }
-
-
-/* Container link styling */
-.video-link {
-  display: inline-block;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 10px;
-}
-
 /* home section start */
 /* Container link styling */
 .video-link {
@@ -71,7 +61,7 @@ html ::-webkit-scrollbar{
 
 /* Video styling */
 .styled-video {
-  width: 70%;
+  width: 400px;
   max-width: 500px; /* Keeps it responsive */
   height: auto;
   border-radius: 10px;
@@ -98,21 +88,24 @@ html ::-webkit-scrollbar{
 /* For medium screens (tablets, etc.) */
 @media screen and (max-width: 982px) {
   .styled-video {
-    max-width: 50%; /* Increase video width for medium-sized screens */
+    width: 300px;
+    max-width: 400px; /* Increase video width for medium-sized screens */
   }
 }
 
 /* For small screens (phones in portrait mode) */
 @media screen and (max-width: 766px) {
   .styled-video {
-    max-width: 50%; /* Make video width even larger for small screens */
+    width: 250px;
+    max-width: 350px; /* Make video width even larger for small screens */
   }
 }
 
 /* For extra small screens (phones in landscape or very small screens) */
 @media screen and (max-width: 480px) {
   .styled-video {
-    max-width: 50%; /* Full width for mobile screens */
+    width: 200px;
+    max-width: 300px; /* Full width for mobile screens */
   }
 }
 
@@ -126,14 +119,21 @@ html ::-webkit-scrollbar{
   background-position: 88%;
 }
 #home .content{
-  padding-top: 210px;
+  padding-top: 150px;
   margin-left: 56px;
 }
 #home .content h3{
+  padding-bottom: 50px;
   font-size: 50px;
   color: white;
 }
+#home .content span{
+  font-weight: bold;
+  font-size: 50px;
+  color: lightgreen;
+}
 #home .content p{
+  margin-top: 10px;
   margin-top: 10px;
   color: white;
   font-size: 16px;
@@ -474,8 +474,8 @@ font-size: 23px;
 }
 #col{
   width: 40%;
-  height: 56vh;
-  margin-top: 70px;
+  height: 100vh;
+  margin-top: 50px;
 }
 #col img{
   width: 70%;
