@@ -53,6 +53,7 @@ html ::-webkit-scrollbar{
 /* home section start */
 /* Container link styling */
 .video-link {
+  max-width: 1000px;
   display: inline-block;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -62,7 +63,7 @@ html ::-webkit-scrollbar{
 /* Video styling */
 .styled-video {
   width: 400px;
-  max-width: 500px; /* Keeps it responsive */
+  max-width: 1000px; /* Keeps it responsive */
   height: auto;
   border-radius: 10px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -88,24 +89,24 @@ html ::-webkit-scrollbar{
 /* For medium screens (tablets, etc.) */
 @media screen and (max-width: 982px) {
   .styled-video {
-    width: 300px;
-    max-width: 400px; /* Increase video width for medium-sized screens */
+    width: 400px;
+    max-width: 500px; /* Increase video width for medium-sized screens */
   }
 }
 
 /* For small screens (phones in portrait mode) */
 @media screen and (max-width: 766px) {
   .styled-video {
-    width: 250px;
-    max-width: 350px; /* Make video width even larger for small screens */
+    width: 4000px;
+    max-width: 400px; /* Make video width even larger for small screens */
   }
 }
 
 /* For extra small screens (phones in landscape or very small screens) */
 @media screen and (max-width: 480px) {
   .styled-video {
-    width: 200px;
-    max-width: 300px; /* Full width for mobile screens */
+    width: 350px;
+    max-width: 400px; /* Full width for mobile screens */
   }
 }
 
@@ -226,6 +227,10 @@ html ::-webkit-scrollbar{
 }
 
 @media screen and (max-width:982px){
+  #about .heading{
+    padding: 30px;
+  }
+
   #about p{
     font-size: 8px;
   }
@@ -249,6 +254,11 @@ html ::-webkit-scrollbar{
   
 }
 @media screen and (max-width:766px){
+  #about .heading{
+    padding: 30px;
+  }
+
+
   #about p{
     font-size: 15px;
   }
@@ -441,7 +451,7 @@ font-size: 23px;
 #contact .container{
   width: 100%;
   height: 80vh;
-  background: linear-gradient(90deg, white 80%, #b2744c 20%);
+  background: linear-gradient(90deg, white 80%,);
   border-radius: 10px;
 }
 .heading6{
@@ -473,12 +483,13 @@ font-size: 23px;
   cursor: pointer;
 }
 #col{
-  width: 40%;
+  max-width: 1000px;
+  width: 100pz;
   height: 100vh;
   margin-top: 50px;
 }
 #col img{
-  width: 70%;
+  width: 90%;
   border-radius: 10px;
 }
 
@@ -489,7 +500,7 @@ font-size: 23px;
   }
   #col{
     width: 100%;
-    background: #b2744c;
+    
 
   }
   #contact{
@@ -513,6 +524,7 @@ font-size: 23px;
   padding-top: 70px;
 }
 #blogs .heading7{
+  padding-top: 200px;
   text-align: center;
   font-size: 30px;
   color: black;
