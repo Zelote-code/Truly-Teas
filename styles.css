@@ -104,8 +104,10 @@ html ::-webkit-scrollbar{
 
 /* For extra small screens (phones in landscape or very small screens) */
 @media screen and (max-width: 480px) {
-  .styled-video {
-    width: 350px;
+   .styled-video {
+    display: flex;
+    align-items: center;
+    width: 280px;
     max-width: 400px; /* Full width for mobile screens */
   }
 }
